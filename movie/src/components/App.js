@@ -10,19 +10,22 @@ function App() {
       <div className='main'>
         <div className='tabs'>
           <div className='tab'>
-            <div className='favourites'>
+            Movies
+            </div>
+            <div className='tab'>
+              Favourites
 
             </div>
            <div className='list'>
              {data.map(movie=>{
-               <Moviecard movie={movie}/>
+             return  <Moviecard movie={movie}/>
              })}
 
            </div>
           </div>
         </div>
       </div>
-    </div>
+    
   );
 }
 

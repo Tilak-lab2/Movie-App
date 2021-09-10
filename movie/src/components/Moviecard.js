@@ -1,12 +1,12 @@
 import React from 'react'
-
-export default class Moviecard extends React.Component {
+import "../index"
+ class Moviecard extends React.Component {
    render(){
        const {movie}=this.props
     return (
         <div className='movie-card'>
             <div className='left'>
-               <img className='left' src={movie.Poster}></img>
+               <img alt="Movie Poster"  src={movie.Poster}></img>
             </div>
             <div className='right'>
                <div className='title'>{movie.Title}</div>
@@ -27,3 +27,4 @@ export default class Moviecard extends React.Component {
     )
    }
 }
+export default Moviecard
