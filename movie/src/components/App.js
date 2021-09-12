@@ -12,13 +12,14 @@ class App extends React.Component {
       console.log("UPDATED")
       this.forceUpdate()
     })
-    store.dispatch(addMovies(data))
+    // currently movies coming from the data file, but ahead you will fetch from firebase then pass it here in dispatch function, got it ? yees
+    store.dispatch(addMovies(data)) // here we are dispatching a object
     console.log('STATE',this.props.store.getState())
   }
   render(){
 
   
-  const movies=this.props.store.getState()
+  const {list}=this.props.store.getState()
   return (
     <div className="App">
       <Navbar></Navbar>
@@ -32,7 +33,7 @@ class App extends React.Component {
 
             </div>
            <div className='list'>
-             {movies.map((movie,index)=>{
+             {list.map((movie,index)=>{
              return  <Moviecard movie={movie} key={index}/>
              })}
 
