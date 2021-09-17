@@ -7,7 +7,7 @@ import { addFavourite } from '../actions'
        this.props.dispatch(addFavourite(movie))
    }
     render(){
-       const {movie}=this.props
+       const {movie,isFavourite}=this.props
     return (
         <div className='movie-card'>
             <div className='left'>
@@ -20,6 +20,10 @@ import { addFavourite } from '../actions'
                    <div className='rating'>
                        {movie.imdbRating}
                    </div>
+                   {
+                       isFavourite
+                       ?<button className='favourite-btn' onClick={this.isMovie}></button>
+                   }
                    <button className='favourit-btn' onClick={this.Favouriteclick}>
                     Favourite   
                    </button>

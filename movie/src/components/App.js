@@ -16,6 +16,14 @@ class App extends React.Component {
     store.dispatch(addMovies(data)) // here we are dispatching a object
     console.log('STATE',this.props.store.getState())
   }
+  isMovie=(movie)=>{
+    const {favourites}=this.props.store.getState()
+    const index=favourites.indexOf(movie)
+    if(index==-1){
+      return true
+    } 
+    return false
+  }
   render(){
 
   
@@ -34,7 +42,7 @@ class App extends React.Component {
             </div>
            <div className='list'>
              {list.map((movie,index)=>{
-             return  <Moviecard movie={movie} key={index} dispatch={this.props.store.dispatch}/>
+             return  <Moviecard movie={movie} key={index} dispatch={this.props.store.dispatch} isFavourite={this.isMovie(movie)}/>
              })}
 
            </div>
